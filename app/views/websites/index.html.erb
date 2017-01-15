@@ -1,0 +1,19 @@
+<h1>Websites</h1>
+<%= link_to 'New Website', new_website_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Contact Us</th>
+    <th>Beliefs</th>
+  <tr>
+  <% @websites.each do |website| %>
+    <tr>
+      <td><%= website.title %></td>
+      <td><%= website.contact_us %></td>
+      <td><%= website.beliefs %></td>
+      <td><%= link_to 'Show', website_path(website) %></td>
+      <td><%= link_to 'Edit', edit_website_path(website) %></td>
+      <td><%= link_to 'Delete', website_path(website), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

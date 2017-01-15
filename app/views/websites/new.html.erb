@@ -1,0 +1,26 @@
+<h1>New Website</h1>
+<%= form_for :website, url: websites_path do |website| %>
+  <% if @website.errors.any? %>
+    <ul>
+      <% @website.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <p>
+    <%= website.label :title %><br>
+    <%= website.text_field :title %>
+  </p>
+  <p>
+    <%= website.label :contact_us %><br>
+    <%= website.check_box :contact_us %>
+  </p>
+  <p>
+    <%= website.label :beliefs %><br>
+    <%= website.check_box :beliefs %>
+  </p>
+  <p>
+    <%= website.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', websites_path %>

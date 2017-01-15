@@ -1,0 +1,13 @@
+<p>
+  <strong>Title:</strong>
+  <%= @website.title %>
+</p>
+<p>
+  <strong>Contact Us:</strong>
+  <%= @website.contact_us %>
+</p>
+<p>
+  <strong>Beliefs:</strong>
+  <%= @website.beliefs %>
+</p>
+<%= link_to 'Back', websites_path %> <%= link_to 'Edit', edit_website_path %> <%= link_to 'Delete', website_path(@website), method: :delete, data: { confirm: 'Are you sure?' } %>
